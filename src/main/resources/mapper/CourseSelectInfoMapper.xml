@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.dao.CourseSelectInfoDao">
+    
+    <select id="findByCondition" resultType="com.example.entity.CourseSelectInfo">
+        select * from course_select_info
+        <where>
+            <if test="teacherId != null">
+                and teacherId = #{teacherId}
+            </if>
+            <if test="studentId != null">
+                and studentId= #{studentId}
+            </if>
+        </where>
+    </select>
+ 
+</mapper>
