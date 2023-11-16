@@ -1,7 +1,7 @@
-# duckManagementSystem
+# duckManagementSystem 双鸭山教务管理系统
 
 First of all, thanks for reading.
-首先，感谢阅读。
+首先，感谢阅读。（中文版请往下看）
 
 ---
 
@@ -10,7 +10,7 @@ First of all, thanks for reading.
 This project is the final assignment of my Java course in the second year of college.
 
 A management system related to the school curriculum that is not separated from the front and back
-full name：Sun Yat-sen Management System
+duckManagementSystem full name：Sun Yat-sen Management System
 
 ## Tech stack
 
@@ -75,7 +75,7 @@ full name：Sun Yat-sen Management System
 这是本人于大二编写的Java基础课程的期末大作业。
 
 一个前后端不分离的与学校课程相关的管理系统
-全名：双鸭山管理系统
+duckManagementSystem全名：双鸭山管理系统
 
 ## 技术栈
 
