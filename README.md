@@ -28,4 +28,4 @@ A management system related to the school curriculum that is not separated from 
 - 编译器：idea
 - 数据库：MySQL
 - 前端：前端三件套、vue框架、bootstrap模板
-- 后端：（maven项目：）Springboot、MyBatis、SpringMVC
+- 后端：Springboot、MyBatis、SpringMVC
