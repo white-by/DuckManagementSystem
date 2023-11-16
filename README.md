@@ -1,9 +1,10 @@
 # duckManagementSystem 双鸭山教务管理系统
 
 First of all, thanks for reading.
+
 首先，感谢阅读。（中文版请往下看）
 
----
+
 
 ## Introduction
 
