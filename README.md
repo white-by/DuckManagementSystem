@@ -31,7 +31,7 @@ duckManagementSystem full name：Sun Yat-sen Management System
 3. Change the password to your own MySQL password in the 'application.yml' file
 4. Run
 
--landing
+- landing
 
 1. Administrator: admin
 2. Teacher: teac
@@ -57,7 +57,7 @@ duckManagementSystem full name：Sun Yat-sen Management System
 -student
   -landing
   - Personal interface
-  - Student Sheets
+  - Student Table
   - Additions, deletions and changes to the student table
 -course
   - Full schedule of courses
