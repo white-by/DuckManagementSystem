@@ -22,7 +22,7 @@ duckManagementSystem full name：Sun Yat-sen Management System
 
 ## Please prepare before you get started
 
--initialize
+- initialize
 
 1. Maven has been configured
 2. The MySQL database has been configured
