@@ -2,7 +2,7 @@
 
 First of all, thanks for reading.
 
-首先，感谢阅读。（中文版请往下看）
+首先，感谢阅读。（中文版介绍请往下看）
 
 
 
@@ -34,13 +34,13 @@ duckManagementSystem full name：Sun Yat-sen Management System
 -landing
 
 1. Administrator: admin
-2. Teacher: TEAC
-3. Students: STU
-4. The password is 123
+2. Teacher: teac
+3. Students: stu
+4. All password is 123
 
 ## Implement features
 
-- ps：
+- tips：
   - The administrator permission level is 1, 2 for teachers and 3 for students
   - When adding a new user, the initial password is 123.
 - Login screen
@@ -53,7 +53,7 @@ duckManagementSystem full name：Sun Yat-sen Management System
   -landing
   - Personal interface
   - Teacher Table
-  - Additions, deletions and changes to the teacher's list
+  - Additions, deletions and changes to the teacher table
 -student
   -landing
   - Personal interface
@@ -105,7 +105,7 @@ duckManagementSystem全名：双鸭山管理系统
 
 ## 实现功能
 
-- ps：
+- tips：
   - 管理员权限等级为1，教师2，学生3
   - 新增用户时，初始密码“123”
 - 登陆界面
