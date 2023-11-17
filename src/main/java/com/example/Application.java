@@ -4,6 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import tk.mybatis.spring.annotation.MapperScan;
 
+/**
+ *
+ * @author whiteby https://github.com/white-by
+ */
 
 @SpringBootApplication
 @MapperScan("com.example.dao")
