@@ -23,15 +23,16 @@ duckManagementSystem full name：Sun Yat-sen Management System
 
 ## Please prepare before you get started
 
-- initialize
+- Initialize
 
 1. Maven has been configured
 2. The MySQL database has been configured
+
    2.1. In the local Mysql, create a database with the database name duck_management_system and import the .sql file I provided.
 3. Change the password to your own MySQL password in the 'application.yml' file
 4. Run
 
-- landing
+- Landing
 
 1. Administrator: admin
 2. Teacher: teac
@@ -92,6 +93,7 @@ duckManagementSystem全名：双鸭山管理系统
 
 1. 已经配置maven
 2. 已经配置mysql数据库
+
    2.1. 在本地的Mysql中，创建一个数据库名称为 duck_management_system 的数据库，并导入我提供的 .sql 文件,
 3. 在`application.yml`文件中将密码改成自己mysql的密码
 4. 运行
