@@ -8,7 +8,7 @@ First of all, thanks for reading.
 
 ## Introduction
 
-This project is the final assignment of my Java course in the second year of college.
+This project is the final assignment of my Java course in the second year of college in 2023.
 
 A management system related to the school curriculum that is not separated from the front and back
 duckManagementSystem full name：Sun Yat-sen Management System
@@ -73,7 +73,7 @@ duckManagementSystem full name：Sun Yat-sen Management System
 
 ## 简介
 
-这是本人于大二编写的Java基础课程的期末大作业。
+这是本人于2023年大二编写的Java基础课程的期末大作业。
 
 一个前后端不分离的与学校课程相关的管理系统
 duckManagementSystem全名：双鸭山管理系统
