@@ -1,6 +1,7 @@
 package com.example.dao;
 
 import com.example.entity.CourseSelectInfo;
+import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -18,4 +19,10 @@ public interface CourseSelectInfoDao extends Mapper<CourseSelectInfo> {
     CourseSelectInfo find(@Param("name") String name, @Param("teacherId") Long teacherId, @Param("studentId") Long studentId);
 
     List<CourseSelectInfo> findByCondition(@Param("teacherId") Long teacherId, @Param("studentId") Long studentId);
+
+    @Delete("delete from course_select_info where studentId = #{id}")
+    void deleteCourseSelectByStudentId(Long id);
+
+    @Delete("delete from course_select_info where teacherId = #{id}")
+    void deleteCourseSelectByTeacherId(Long id);
 }

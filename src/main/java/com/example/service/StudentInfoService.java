@@ -1,6 +1,7 @@
 package com.example.service;
 
 import cn.hutool.core.util.ObjectUtil;
+import com.example.dao.CourseSelectInfoDao;
 import com.example.dao.StudentInfoDao;
 import com.example.entity.Account;
 import com.example.entity.StudentInfo;
@@ -15,6 +16,8 @@ public class StudentInfoService {
 
     @Resource
     private StudentInfoDao studentInfoDao;
+    @Resource
+    private CourseSelectInfoDao courseSelectInfoDao;
 
     public Account login(String name, String password) {
         // 去数据库查信息
@@ -47,6 +50,7 @@ public class StudentInfoService {
 
     public void deleteById(Long id) {
         studentInfoDao.deleteByPrimaryKey(id);
+        courseSelectInfoDao.deleteCourseSelectByStudentId(id);
     }
 }
 
