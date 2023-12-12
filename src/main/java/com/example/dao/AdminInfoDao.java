@@ -6,6 +6,8 @@ import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
 import tk.mybatis.mapper.common.Mapper;
 
+import java.util.List;
+
 @Repository
 public interface AdminInfoDao extends Mapper<AdminInfo> {
 
@@ -14,4 +16,7 @@ public interface AdminInfoDao extends Mapper<AdminInfo> {
 
     @Select("select * from admin_info where id = #{id}")
     AdminInfo findById(Long id);
+
+    @Select("select * from admin_info where name like concat('%', #{search}, '%')")
+    List<AdminInfo> findSearch(String search);
 }

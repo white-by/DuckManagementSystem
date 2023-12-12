@@ -57,6 +57,10 @@ public class TeacherInfoService {
         courseSelectInfoDao.deleteCourseSelectByTeacherId(id);
         classInfoDao.deleteByTeacherId(id);
     }
+
+    public List<TeacherInfo> findSearch(String search) {
+        return teacherInfoDao.findSearch(search);
+    }
 }
 
 

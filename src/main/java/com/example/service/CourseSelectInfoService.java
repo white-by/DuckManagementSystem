@@ -1,6 +1,7 @@
 package com.example.service;
 
 import cn.hutool.core.util.ObjectUtil;
+import com.example.dao.ClassInfoDao;
 import com.example.dao.CourseSelectInfoDao;
 import com.example.dao.StudentInfoDao;
 import com.example.dao.TeacherInfoDao;
@@ -20,6 +21,8 @@ public class CourseSelectInfoService {
     private TeacherInfoDao teacherInfoDao;
     @Resource
     private StudentInfoDao studentInfoDao;
+    @Resource
+    private ClassInfoDao classInfoDao;
 
     public List<CourseSelectInfo> findAll(HttpServletRequest request) {
         Account user = (Account) request.getSession().getAttribute("user");
@@ -56,6 +59,13 @@ public class CourseSelectInfoService {
         return courseSelectInfoDao.find(name, teacherId, studentId);
     }
 
+    public void drop(Long id) {
+        CourseSelectInfo courseSelectInfo = courseSelectInfoDao.selectByPrimaryKey(id);
+        ClassInfo classInfo = classInfoDao.findByNameAndTeacher(courseSelectInfo.getName(), courseSelectInfo.getTeacherId());
+        courseSelectInfoDao.deleteByPrimaryKey(id);
+        classInfo.setClassChoose(classInfo.getClassChoose() - 1);
+        classInfoDao.updateByPrimaryKeySelective(classInfo);
+    }
 }
 
 

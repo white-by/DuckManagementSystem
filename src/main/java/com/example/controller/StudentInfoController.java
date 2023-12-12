@@ -33,6 +33,12 @@ public class StudentInfoController {
         return Result.success(list);
     }
 
+    @GetMapping("/{search}")
+    public Result findSearch(@PathVariable String search) {
+        List<StudentInfo> list = studentInfoService.findSearch(search);
+        return Result.success(list);
+    }
+
     @DeleteMapping("/{id}")
     public Result deleteById(@PathVariable Long id) {
         studentInfoService.deleteById(id);

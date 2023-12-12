@@ -19,4 +19,7 @@ public interface ClassInfoDao extends Mapper<ClassInfo> {
 
     @Delete("delete from class_info where teacherId = #{id}")
     void deleteByTeacherId(Long id);
+
+    @Select("select * from class_info where name = #{name} and teacherId = #{teacherId} limit 1")
+    ClassInfo findByNameAndTeacher(@Param("name") String name, @Param("teacherId") Long teacherId);
 }

@@ -52,6 +52,10 @@ public class StudentInfoService {
         studentInfoDao.deleteByPrimaryKey(id);
         courseSelectInfoDao.deleteCourseSelectByStudentId(id);
     }
+
+    public List<StudentInfo> findSearch(String search) {
+        return studentInfoDao.findSearch(search);
+    }
 }
 
 

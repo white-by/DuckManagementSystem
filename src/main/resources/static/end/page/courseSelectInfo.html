@@ -69,8 +69,11 @@
                                 <a href="classInfo.html"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">课程信息</span></a>
                             </li>
 
-                            <li>
+                            <li v-if="user.level === 1 || user.level === 3">
                                 <a href="courseSelectInfo.html" class="active-menu"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">选课信息</span></a>
+                            </li>
+                            <li v-if="user.level === 2">
+                                <a href="courseSelectInfo.html" class="active-menu"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">授课信息</span></a>
                             </li>
 
                             <li>
@@ -91,7 +94,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="page-header">
-                                <small>选课信息</small>
+                                <small v-if="user.level === 1 || user.level === 3">选课信息</small>
+                                <small v-if="user.level === 2">授课信息</small>
                             </h1>
                         </div>
                     </div>
@@ -117,6 +121,7 @@
 <!--                                            <th>人数上限</th>-->
 <!--                                            <th>已选人数</th>-->
                                             <th>选课学生</th>
+                                            <th v-if="user.level === 3">课程操作</th>
                                         </tr>
                                         </thead>
                                         <tbody v-for="obj in tableData">
@@ -131,6 +136,9 @@
 <!--                                            <td>{{obj.classOpen}}</td>-->
 <!--                                            <td>{{obj.classChoose}}</td>-->
                                             <td>{{obj.studentName}}</td>
+                                            <td v-if="user.level === 3">
+                                                <button v-if="user.level === 3" :disabled="obj.classOpen === obj.classChoose" class="btn btn-primary btn-sm" @click="drop(obj.id)">退课</button>
+                                            </td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -208,6 +216,17 @@
                 axios.get("/courseSelectInfo").then(res => {
                     if (res.data.code === '0') {
                         this.tableData = res.data.data;
+                    }
+                    else {
+                        msg("error", res.data.msg);
+                    }
+                })
+            },
+            drop(id) {
+                axios.delete("/courseSelectInfo/" + id).then(res => {
+                    if (res.data.code === '0') {
+                        msg("success", "退课成功");
+                        this.loadTable();
                     }
                     else {
                         msg("error", res.data.msg);

@@ -33,6 +33,12 @@ public class AdminInfoController {
         return Result.success(list);
     }
 
+    @GetMapping("/{search}")
+    public Result findSearch(@PathVariable String search) {
+        List<AdminInfo> list = adminInfoService.findSearch(search);
+        return Result.success(list);
+    }
+
     @DeleteMapping("/{id}")
     public Result deleteById(@PathVariable Long id) {
         adminInfoService.deleteById(id);

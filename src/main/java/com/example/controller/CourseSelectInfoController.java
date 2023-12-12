@@ -24,4 +24,9 @@ public class CourseSelectInfoController {
         return Result.success(list);
     }
 
+    @DeleteMapping("/{id}")
+    public Result drop(@PathVariable Long id) {
+        courseSelectInfoService.drop(id);
+        return Result.success();
+    }
 }

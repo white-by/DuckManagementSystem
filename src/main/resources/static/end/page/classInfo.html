@@ -69,8 +69,11 @@
                                 <a href="classInfo.html" class="active-menu"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">课程信息</span></a>
                             </li>
 
-                            <li>
-                                <a href="courseSelectInfo.html"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">选课信息</span></a>
+                            <li v-if="user.level === 1 || user.level === 3">
+                                <a href="courseSelectInfo.html" class="active-menu"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">选课信息</span></a>
+                            </li>
+                            <li v-if="user.level === 2">
+                                <a href="courseSelectInfo.html" class="active-menu"><i class="fa fa-table sub-icon-mg" aria-hidden="true"></i><span class="mini-sub-pro">授课信息</span></a>
                             </li>
 
                             <li>

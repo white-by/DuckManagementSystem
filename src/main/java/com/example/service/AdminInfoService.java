@@ -49,6 +49,10 @@ public class AdminInfoService {
     public void deleteById(Long id) {
         adminInfoDao.deleteByPrimaryKey(id);
     }
+
+    public List<AdminInfo> findSearch(String search) {
+        return adminInfoDao.findSearch(search);
+    }
 }
 
 
