@@ -56,6 +56,10 @@ public class StudentInfoService {
     public List<StudentInfo> findSearch(String search) {
         return studentInfoDao.findSearch(search);
     }
+
+    public StudentInfo findByName(String name) {
+        return studentInfoDao.findByName(name);
+    }
 }
 
 

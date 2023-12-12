@@ -61,6 +61,10 @@ public class TeacherInfoService {
     public List<TeacherInfo> findSearch(String search) {
         return teacherInfoDao.findSearch(search);
     }
+
+    public TeacherInfo findByName(String name) {
+        return teacherInfoDao.findByName(name);
+    }
 }
 
 

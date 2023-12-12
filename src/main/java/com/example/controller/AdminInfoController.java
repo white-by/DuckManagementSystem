@@ -2,7 +2,9 @@ package com.example.controller;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.example.common.Result;
+import com.example.common.ResultCode;
 import com.example.entity.AdminInfo;
+import com.example.exception.CustomException;
 import com.example.service.AdminInfoService;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +23,10 @@ public class AdminInfoController {
         // 检查数据是否空白
         if (ObjectUtil.isEmpty(adminInfo.getName()) || ObjectUtil.isEmpty(adminInfo.getPhone()) || ObjectUtil.isEmpty(adminInfo.getAge()) || ObjectUtil.isEmpty(adminInfo.getSex())) {
             return Result.error("-1", "请输入完整信息");
+        }
+        AdminInfo admin = adminInfoService.findByName(adminInfo.getName());
+        if (ObjectUtil.isNotEmpty(admin)) {
+            throw new CustomException(ResultCode.USER_EXIST_ERROR);
         }
         adminInfoService.add(adminInfo);
         return Result.success();

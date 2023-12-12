@@ -18,4 +18,7 @@ public interface TeacherInfoDao extends Mapper<TeacherInfo> {
 
     @Select("select * from teacher_info where name like concat('%', #{search}, '%')")
     List<TeacherInfo> findSearch(String search);
+
+    @Select("select * from teacher_info where name = #{name} ")
+    TeacherInfo findByName(String name);
 }

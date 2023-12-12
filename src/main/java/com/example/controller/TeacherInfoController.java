@@ -2,7 +2,9 @@ package com.example.controller;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.example.common.Result;
+import com.example.common.ResultCode;
 import com.example.entity.TeacherInfo;
+import com.example.exception.CustomException;
 import com.example.service.TeacherInfoService;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +22,14 @@ public class TeacherInfoController {
     public Result add(@RequestBody TeacherInfo teacherInfo) {
         if (ObjectUtil.isEmpty(teacherInfo.getName()) || ObjectUtil.isEmpty(teacherInfo.getMajor()) || ObjectUtil.isEmpty(teacherInfo.getAge()) || ObjectUtil.isEmpty(teacherInfo.getSex()) || ObjectUtil.isEmpty(teacherInfo.getTitle())) {
             return Result.error("-1", "请输入完整信息");
+        }
+//        AdminInfo admin = adminInfoService.findByName(adminInfo.getName());
+//        if (ObjectUtil.isNotEmpty(admin)) {
+//            throw new CustomException(ResultCode.USER_EXIST_ERROR);
+//        }
+        TeacherInfo teacher = teacherInfoService.findByName(teacherInfo.getName());
+        if (ObjectUtil.isNotEmpty(teacher)) {
+            throw new CustomException(ResultCode.USER_EXIST_ERROR);
         }
         teacherInfoService.add(teacherInfo);
         return Result.success();

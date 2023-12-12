@@ -53,6 +53,10 @@ public class AdminInfoService {
     public List<AdminInfo> findSearch(String search) {
         return adminInfoDao.findSearch(search);
     }
+
+    public AdminInfo findByName(String name) {
+        return adminInfoDao.findByName(name);
+    }
 }
 
 

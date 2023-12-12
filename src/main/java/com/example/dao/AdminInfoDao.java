@@ -19,4 +19,7 @@ public interface AdminInfoDao extends Mapper<AdminInfo> {
 
     @Select("select * from admin_info where name like concat('%', #{search}, '%')")
     List<AdminInfo> findSearch(String search);
+
+    @Select("select * from admin_info where name = #{name}")
+    AdminInfo findByName(String name);
 }
