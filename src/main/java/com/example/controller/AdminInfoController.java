@@ -1,5 +1,6 @@
 package com.example.controller;
 
+import cn.hutool.core.util.ObjectUtil;
 import com.example.common.Result;
 import com.example.entity.AdminInfo;
 import com.example.service.AdminInfoService;
@@ -17,12 +18,20 @@ public class AdminInfoController {
 
     @PostMapping
     public Result add(@RequestBody AdminInfo adminInfo) {
+        // 检查数据是否空白
+        if (ObjectUtil.isEmpty(adminInfo.getName()) || ObjectUtil.isEmpty(adminInfo.getPhone()) || ObjectUtil.isEmpty(adminInfo.getAge()) || ObjectUtil.isEmpty(adminInfo.getSex())) {
+            return Result.error("-1", "请输入完整信息");
+        }
         adminInfoService.add(adminInfo);
         return Result.success();
     }
 
     @PutMapping
     public Result update(@RequestBody AdminInfo adminInfo) {
+        // 检查数据是否空白
+        if (ObjectUtil.isEmpty(adminInfo.getName()) || ObjectUtil.isEmpty(adminInfo.getPhone()) || ObjectUtil.isEmpty(adminInfo.getAge()) || ObjectUtil.isEmpty(adminInfo.getSex())) {
+            return Result.error("-1", "请输入完整信息");
+        }
         adminInfoService.update(adminInfo);
         return Result.success();
     }

@@ -27,6 +27,10 @@ public class ClassInfoController {
 
     @PostMapping
     public Result add(@RequestBody ClassInfo classInfo) {
+        // 检查数据是否空白
+        if (ObjectUtil.isEmpty(classInfo.getName()) || ObjectUtil.isEmpty(classInfo.getMajor()) || ObjectUtil.isEmpty(classInfo.getClassOpen()) || ObjectUtil.isEmpty(classInfo.getDescription()) || ObjectUtil.isEmpty(classInfo.getScore()) || ObjectUtil.isEmpty(classInfo.getTeacherId())  || ObjectUtil.isEmpty(classInfo.getLocation()) || ObjectUtil.isEmpty(classInfo.getTime())) {
+            return Result.error("-1", "请输入完整信息");
+        }
         classInfoService.add(classInfo);
         return Result.success();
     }
@@ -79,6 +83,9 @@ public class ClassInfoController {
 
     @PutMapping
     public Result update(@RequestBody ClassInfo classInfo) {
+        if (ObjectUtil.isEmpty(classInfo.getName()) || ObjectUtil.isEmpty(classInfo.getMajor()) || ObjectUtil.isEmpty(classInfo.getClassOpen()) || ObjectUtil.isEmpty(classInfo.getDescription()) || ObjectUtil.isEmpty(classInfo.getScore()) || ObjectUtil.isEmpty(classInfo.getTeacherId())  || ObjectUtil.isEmpty(classInfo.getLocation()) || ObjectUtil.isEmpty(classInfo.getTime())) {
+            return Result.error("-1", "请输入完整信息");
+        }
         classInfoService.update(classInfo);
         return Result.success();
     }
